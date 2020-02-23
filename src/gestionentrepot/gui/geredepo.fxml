@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import java.lang.String?>
+<?import java.net.URL?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gestionentrepot.controllers.GeredepoController">
+   <children>
+      <Pane layoutX="3.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <Label id=".labeltitre" layoutX="313.0" prefHeight="40.0" prefWidth="194.0" styleClass="labeltitre" text="Gere Depot">
+               <font>
+                  <Font name="Ebrima Bold" size="25.0" />
+               </font>
+               <stylesheets>
+                  <URL value="@stylehseet.css" />
+               </stylesheets>
+            </Label>
+         </children>
+      </Pane>
+      <Pane layoutX="-4.0" prefHeight="463.0" prefWidth="200.0" styleClass="left" stylesheets="@stylehseet.css">
+         <children>
+            <JFXButton layoutX="-1.0" layoutY="195.0" onAction="#gotoDashbord" prefHeight="25.0" prefWidth="200.0" style="-fx-background-color: #191970;" text="Dashboard" textFill="WHITE">
+               <font>
+                  <Font name="Arial" size="18.0" />
+               </font>
+            </JFXButton>
+            <JFXButton layoutX="-1.0" layoutY="261.0" onAction="#gotoStock" prefHeight="25.0" prefWidth="200.0" style="-fx-background-color: #191970;" text="Stock" textFill="WHITE">
+               <font>
+                  <Font name="Arial" size="18.0" />
+               </font>
+            </JFXButton>
+            <JFXButton layoutX="-1.0" layoutY="228.0" onAction="#gotoEmploye" prefHeight="25.0" prefWidth="200.0" style="-fx-background-color: #191970;" text="Employer" textFill="WHITE">
+               <font>
+                  <Font name="Arial" size="18.0" />
+               </font>
+            </JFXButton>
+            <JFXButton layoutX="-1.0" layoutY="294.0" prefHeight="25.0" prefWidth="200.0" style="-fx-background-color: #191970;" text="Depot" textFill="WHITE">
+               <font>
+                  <Font name="Arial" size="18.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </Pane>
+      <TableView fx:id="table" layoutX="208.0" layoutY="63.0" prefHeight="318.0" prefWidth="500.0" stylesheets="@table.css">
+        <columns>
+          <TableColumn fx:id="adr" prefWidth="75.0" text="Adresse" />
+          <TableColumn fx:id="ete" prefWidth="75.0" text="Etat" />
+            <TableColumn fx:id="surf" prefWidth="75.0" text="Surface" />
+            <TableColumn fx:id="id" prefWidth="75.0" text="id" visible="false" />
+        </columns>
+      </TableView>
+      <Label layoutX="37.0" layoutY="142.0" stylesheets="@stylehseet.css" text="Stock For Speed" textFill="WHITE">
+         <font>
+            <Font name="Impact" size="20.0" />
+         </font>
+      </Label>
+      <JFXButton buttonType="RAISED" layoutX="204.0" layoutY="392.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#mod" prefHeight="35.0" prefWidth="145.0" styleClass="envoyer_btn" stylesheets="@stylehseet.css" text="Modifier">
+         <font>
+            <Font name="Impact" size="17.0" />
+         </font>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="354.0" layoutY="392.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#supp" prefHeight="35.0" prefWidth="145.0" styleClass="envoyer_btn" stylesheets="@stylehseet.css" text="Supprimer">
+         <font>
+            <Font name="Impact" size="17.0" />
+         </font>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="512.0" layoutY="392.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#Ajouter" prefHeight="35.0" prefWidth="145.0" styleClass="envoyer_btn" stylesheets="@stylehseet.css" text="Ajouter">
+         <font>
+            <Font name="Impact" size="17.0" />
+         </font>
+      </JFXButton>
+      <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="53.0" layoutY="24.0" pickOnBounds="true" smooth="false">
+         <image>
+            <Image url="@../images/s4s.png" />
+         </image>
+         <styleClass>
+            <String fx:value="envoyer_btn" />
+            <String fx:value="content-area-circle-btns" />
+            <String fx:value="img" />
+         </styleClass>
+      </ImageView>
+   </children>
+</AnchorPane>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import java.lang.String?>
+<?import java.net.URL?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gestionentrepot.controllers.ModificationdepController">
+   <children>
+      <Pane layoutX="13.0" layoutY="20.0" prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <Label id=".labeltitre" layoutX="256.0" prefHeight="40.0" prefWidth="251.0" styleClass="labeltitre" text="Modification Depot">
+               <font>
+                  <Font name="Ebrima Bold" size="25.0" />
+               </font>
+               <stylesheets>
+                  <URL value="@stylehseet.css" />
+               </stylesheets>
+            </Label>
+         </children>
+      </Pane>
+      <Pane layoutX="-1.0" prefHeight="473.0" prefWidth="200.0" styleClass="left" stylesheets="@stylehseet.css">
+         <children>
+            <JFXButton layoutY="172.0" onAction="#gotoDashbord" prefHeight="25.0" prefWidth="200.0" style="-fx-background-color: #191970;" text="Dashboard" textFill="WHITE">
+               <font>
+                  <Font name="Arial" size="18.0" />
+               </font>
+            </JFXButton>
+            <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="69.0" layoutY="9.0" pickOnBounds="true" smooth="false">
+               <image>
+                  <Image url="@../images/s4s.png" />
+               </image>
+               <styleClass>
+                  <String fx:value="envoyer_btn" />
+                  <String fx:value="content-area-circle-btns" />
+                  <String fx:value="img" />
+               </styleClass>
+            </ImageView>
+            <Label layoutX="35.0" layoutY="126.0" text="Stock For Speed" textFill="WHITE">
+               <font>
+                  <Font name="Impact" size="20.0" />
+               </font>
+            </Label>
+            <JFXButton layoutX="1.0" layoutY="205.0" onAction="#gotoEmploye" prefHeight="33.0" prefWidth="200.0" style="-fx-background-color: #191970;" text="Employer" textFill="WHITE">
+               <font>
+                  <Font name="Arial" size="18.0" />
+               </font>
+            </JFXButton>
+            <JFXButton layoutX="1.0" layoutY="238.0" onAction="#gotoStock" prefHeight="33.0" prefWidth="200.0" style="-fx-background-color: #191970;" text="Stock" textFill="WHITE">
+               <font>
+                  <Font name="Arial" size="18.0" />
+               </font>
+            </JFXButton>
+            <JFXButton layoutY="271.0" onAction="#gotoDepot" prefHeight="25.0" prefWidth="200.0" style="-fx-background-color: #191970;" text=" Depot" textFill="WHITE">
+               <font>
+                  <Font name="Arial" size="18.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </Pane>
+      <JFXButton buttonType="RAISED" layoutX="428.0" layoutY="403.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#mod" prefHeight="35.0" prefWidth="145.0" styleClass="envoyer_btn" stylesheets="@stylehseet.css" text="Modifier">
+         <font>
+            <Font name="Impact" size="17.0" />
+         </font>
+      </JFXButton>
+      <JFXTextField fx:id="adr" layoutX="227.0" layoutY="82.0" maxWidth="399.0" minWidth="289.0" prefHeight="31.0" prefWidth="389.0" promptText="Adresse" />
+      <JFXTextField fx:id="surface" layoutX="228.0" layoutY="129.0" maxWidth="382.0" minWidth="338.0" prefHeight="31.0" prefWidth="382.0" promptText="Surface" />
+      <JFXTextField fx:id="prix1" layoutX="225.0" layoutY="189.0" maxWidth="399.0" minWidth="289.0" prefHeight="31.0" prefWidth="389.0" promptText="Prix" />
+      <ComboBox fx:id="comboxdispo" layoutX="419.0" layoutY="275.0" prefWidth="150.0" />
+      <Text layoutX="241.0" layoutY="283.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Disponibilité" />
+   </children>
+</AnchorPane>

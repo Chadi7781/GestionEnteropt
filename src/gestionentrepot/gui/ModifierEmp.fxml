@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="576.0" prefWidth="645.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gestionentrepot.controllers.ModifierEmp">
+   <children>
+      <Button fx:id="button_Submit" layoutX="467.0" layoutY="434.0" mnemonicParsing="false" onAction="#handleButtonSubmitAction" prefHeight="38.0" prefWidth="133.0" styleClass="button_Submit" stylesheets="@styles.css" text="Valider" textFill="#fcfcfc">
+         <font>
+            <Font name="Lato Bold" size="12.0" />
+         </font>
+      </Button>
+      <Text layoutX="179.0" layoutY="137.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cin" />
+      <Text layoutX="174.0" layoutY="208.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom" />
+      <Text layoutX="166.0" layoutY="262.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Prenom" />
+      <Text layoutX="402.0" layoutY="261.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date naissance" wrappingWidth="79.849609375" />
+      <Text layoutX="408.0" layoutY="146.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Adresse" />
+      <Text layoutX="408.0" layoutY="209.0" strokeType="OUTSIDE" strokeWidth="0.0" text="émail" />
+      <Text layoutX="409.0" layoutY="327.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mission" />
+      <TextField id="Cin_Input" fx:id="Cin_Input" layoutX="245.0" layoutY="134.0" prefHeight="31.0" prefWidth="143.0" styleClass="Email_Input" stylesheets="@styles.css">
+         <font>
+            <Font name="System Italic" size="12.0" />
+         </font>
+      </TextField>
+      <TextField id="Nom_Input" fx:id="Nom_Input" layoutX="245.0" layoutY="189.0" prefHeight="31.0" prefWidth="143.0" styleClass="Email_Input" stylesheets="@styles.css" />
+      <TextField id="Prenom_Input" fx:id="Prenom_Input" layoutX="245.0" layoutY="252.0" prefHeight="27.0" prefWidth="143.0" styleClass="Email_Input" stylesheets="@styles.css" />
+      <TextField id="Adresse_Input" fx:id="Adresse_Input" layoutX="488.0" layoutY="126.0" prefHeight="31.0" prefWidth="143.0" styleClass="Email_Input" stylesheets="@styles.css" />
+      <TextField id="Email_Input" fx:id="Email_Input" layoutX="488.0" layoutY="181.0" prefHeight="31.0" prefWidth="143.0" styleClass="Email_Input" stylesheets="@styles.css" />
+      <DatePicker fx:id="DateNaissance_Input" layoutX="488.0" layoutY="242.0" prefHeight="31.0" prefWidth="143.0" promptText="JJ/MM/AAAA" styleClass="add_Naissance_Input" stylesheets="@styles.css" />
+      <Pane layoutX="13.0" prefHeight="104.0" prefWidth="634.0" style="-fx-background-color: #483D8B;">
+         <children>
+            <Label layoutX="265.0" layoutY="33.0" prefHeight="38.0" prefWidth="355.0" text="Modier Employé" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Microsoft Sans Serif" size="33.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <ImageView fitHeight="38.0" fitWidth="41.0" layoutX="598.0" layoutY="525.0" pickOnBounds="true" smooth="false" styleClass="img">
+         <image>
+            <Image url="@../../../../../Users/htc/Documents/NetBeansProjects/prj/src/prj/utils/images/Image1.png" />
+         </image>
+      </ImageView>
+      <Text fx:id="alertCIN" fill="#ee0404" layoutX="245.0" layoutY="176.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="142.99999833106995" />
+      <Text fx:id="alertAdresse" fill="#ee0404" layoutX="483.0" layoutY="169.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="152.00000731647015" />
+      <Text fx:id="alertNom" fill="#ee0404" layoutX="245.0" layoutY="232.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="142.99999833106995" />
+      <Text fx:id="alertEmail" fill="#ee0404" layoutX="483.0" layoutY="224.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="152.00000731647015" />
+      <Text fx:id="alertPrenom" fill="#ee0404" layoutX="245.0" layoutY="291.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="143.00000809133053" />
+      <Text fx:id="alertMIssion" fill="#ee0404" layoutX="483.0" layoutY="283.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="152.00000731647015" />
+      <Text fx:id="alertDateNaissance" fill="#ee0404" layoutX="485.0" layoutY="345.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="149.9999974220991" />
+      <ComboBox fx:id="ComboxMission" layoutX="488.0" layoutY="310.0" prefHeight="25.0" prefWidth="143.0" />
+      <TextField fx:id="telephone_input" layoutX="241.0" layoutY="310.0" prefHeight="25.0" prefWidth="143.0" />
+      <Text layoutX="168.0" layoutY="328.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Télephone" wrappingWidth="56.6875" />
+      <Text fx:id="alertTel" fill="#ee0404" layoutX="241.0" layoutY="346.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="143.00000147521496" />
+      <Pane layoutX="-8.0" layoutY="-1.0" prefHeight="577.0" prefWidth="173.0" style="-fx-background-color: #483D8B;">
+         <children>
+            <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="43.0" layoutY="14.0" pickOnBounds="true" smooth="false">
+               <image>
+                  <Image url="@../images/s4s.png" />
+               </image>
+               <styleClass>
+                  <String fx:value="envoyer_btn" />
+                  <String fx:value="content-area-circle-btns" />
+                  <String fx:value="img" />
+               </styleClass>
+            </ImageView>
+            <Label layoutX="17.0" layoutY="133.0" stylesheets="@stylehseet.css" text="Stock For Speed">
+               <font>
+                  <Font name="Impact" size="20.0" />
+               </font>
+            </Label>
+            <Button fx:id="Bt_Dashboard1" layoutY="179.0" mnemonicParsing="false" onAction="#gotoDashboard" prefHeight="38.0" prefWidth="173.0" style="-fx-background-color: #191970;" text="Dashboard" textFill="WHITE">
+               <font>
+                  <Font name="Arial" size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="Bt_Emp1" layoutY="217.0" mnemonicParsing="false" onAction="#gotoEmploye" prefHeight="38.0" prefWidth="173.0" style="-fx-background-color: #191970;" text="Employé" textFill="WHITE">
+               <font>
+                  <Font name="Arial" size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="Bt_Stock1" layoutY="255.0" mnemonicParsing="false" onAction="#gotoStock" prefHeight="38.0" prefWidth="173.0" style="-fx-background-color: #191970;" text="Stock" textFill="WHITE">
+               <font>
+                  <Font name="Arial" size="18.0" />
+               </font>
+            </Button>
+            <JFXButton layoutY="293.0" prefHeight="33.0" prefWidth="173.0" style="-fx-background-color: #191970;" text=" Depot" textFill="WHITE">
+               <font>
+                  <Font name="Arial" size="18.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
