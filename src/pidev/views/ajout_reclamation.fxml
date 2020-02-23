@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import java.lang.String?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+<?import org.controlsfx.control.Rating?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="791.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pidev.views.ReclamationServiceController">
+   <children>
+      <BorderPane fx:id="border_pane" prefHeight="500.0" prefWidth="791.0" style="-fx-background-color: #fff;">
+         <left>
+            <Pane prefHeight="537.0" prefWidth="225.0" styleClass="left" BorderPane.alignment="CENTER">
+               <children>
+                  <HBox layoutX="23.0" layoutY="14.0" spacing="5.0">
+                     <children>
+                        <Circle fx:id="btnClose" fill="#f44336" onMouseClicked="#handleMouseEvent" radius="7.0" stroke="BLACK" strokeType="INSIDE" />
+                        <Circle fill="#fbdd2d" radius="7.0" stroke="BLACK" strokeType="INSIDE" />
+                        <Circle fill="#00c71c" radius="7.0" stroke="BLACK" strokeType="INSIDE" />
+                     </children>
+                  </HBox>
+                  <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="61.0" layoutY="170.0" pickOnBounds="true" smooth="false">
+                     <image>
+                        <Image url="@../util/images/s4s.png" />
+                     </image>
+                     <styleClass>
+                        <String fx:value="envoyer_btn" />
+                        <String fx:value="content-area-circle-btns" />
+                        <String fx:value="img" />
+                     </styleClass>
+                  </ImageView>
+                  <Label layoutX="46.0" layoutY="270.0" stylesheets="@../../../PiDev/src/pidev/utils/css/stylehseet.css" text="Stock For Speed">
+                     <font>
+                        <Font name="Impact" size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+               <stylesheets>
+                  <URL value="@util/stylehseet.css" />
+                  <URL value="@../util/stylehseet.css" />
+               </stylesheets></Pane>
+         </left>
+         <center>
+            <StackPane fx:id="stackPane" prefHeight="500.0" prefWidth="500.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Pane fx:id="pnlModif" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #fff;">
+                     <children>
+                        <TextField fx:id="tx_mod_objet" layoutX="21.0" layoutY="67.0" prefHeight="26.0" prefWidth="391.0" promptText="Objet" />
+                        <TextArea fx:id="txt_mod_desc" layoutX="20.0" layoutY="121.0" prefHeight="164.0" prefWidth="394.0" promptText="Description" />
+                        <Label layoutX="28.0" layoutY="103.0" prefHeight="18.0" prefWidth="70.0" style="-fx-text-fill: #000;" text="Description" />
+                        <JFXButton fx:id="btnModifierValider" alignment="CENTER" buttonType="RAISED" layoutX="98.0" layoutY="384.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#handleButtonValidateAction" ripplerFill="#4059a9" styleClass="envoyer_btn" stylesheets="@util/stylehseet.css" text="Valider" textFill="#4059a9">
+                           <font>
+                              <Font name="Impact" size="17.0" />
+                           </font>
+                           <effect>
+                              <Glow />
+                           </effect>
+                        </JFXButton>
+                        <Label layoutX="28.0" layoutY="49.0" prefHeight="18.0" prefWidth="70.0" style="-fx-text-fill: #000;" text="Objet" />
+                        <Circle fx:id="circle_etat" fill="#f52727" layoutX="201.0" layoutY="344.0" radius="8.0" stroke="BLACK" strokeType="INSIDE" />
+                        <Label layoutX="39.0" layoutY="309.0" prefHeight="18.0" prefWidth="70.0" style="-fx-text-fill: #000;" text="Etat" />
+                        <Label fx:id="txt_etat" layoutX="109.0" layoutY="342.0" prefHeight="18.0" prefWidth="70.0" style="-fx-text-fill: #000;" text="En cours ..." />
+                        <JFXButton fx:id="btnModifierAnnuler" alignment="CENTER" buttonType="RAISED" layoutX="257.0" layoutY="384.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" ripplerFill="#4059a9" styleClass="envoyer_btn" stylesheets="@utils/css/stylehseet.css" text="Annuler" textFill="#4059a9">
+                           <font>
+                              <Font name="Impact" size="17.0" />
+                           </font>
+                           <effect>
+                              <Glow />
+                           </effect>
+                        </JFXButton>
+                        <ImageView fx:id="btnBackRecl" fitHeight="31.0" fitWidth="39.0" layoutX="13.0" layoutY="14.0" onMouseClicked="#handleMouseEvent" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../util/images/back.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+                  <Pane fx:id="pnlFeedback" prefHeight="500.0" prefWidth="513.0" style="-fx-background-color: #fff;" stylesheets="@../util/stylehseet.css">
+                     <children>
+                        <Label fx:id="rec" layoutX="94.0" layoutY="23.0" prefHeight="32.0" prefWidth="244.0" style="-fx-text-fill: linear-gradient(to bottom left,#6F4CBB,#431FA0);" styleClass="labeltitre" text="Ajouter Feedback">
+                           <font>
+                              <Font name="Ebrima Bold" size="25.0" />
+                           </font>
+                           <stylesheets>
+                              <URL value="@../../../JavaApplication1/src/javaapplication1/util/css/stylehseet.css" />
+                              <URL value="@../util/stylehseet.css" />
+                           </stylesheets>
+                        </Label>
+                        <JFXButton fx:id="btnEnvoyer" alignment="CENTER" buttonType="RAISED" layoutX="52.0" layoutY="388.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#handleButtonAction" prefHeight="35.0" prefWidth="100.0" ripplerFill="#4059a9" styleClass="envoyer_btn" stylesheets="@utils/css/stylehseet.css" text="Envoyer" textFill="#4059a9">
+                           <font>
+                              <Font name="Impact" size="17.0" />
+                           </font>
+                           <effect>
+                              <Glow />
+                           </effect>
+                        </JFXButton>
+                        <JFXButton fx:id="btnAnnuler" alignment="CENTER" buttonType="RAISED" layoutX="252.0" layoutY="388.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#handleButtonAction" prefHeight="35.0" prefWidth="100.0" ripplerFill="#4059a9" styleClass="envoyer_btn" text="Annuler" textFill="#4059a9">
+                           <font>
+                              <Font name="Impact" size="17.0" />
+                           </font>
+                           <effect>
+                              <Glow />
+                           </effect>
+                           <stylesheets>
+                              <URL value="@utils/css/stylehseet.css" />
+                              <URL value="@utils/css/stylehseet.css" />
+                           </stylesheets>
+                        </JFXButton>
+                        <HBox alignment="CENTER_RIGHT" layoutX="343.0" layoutY="14.0">
+                           <children>
+                              <JFXButton fx:id="userIcon" alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#handleButtonAction" prefHeight="50.0" prefWidth="50.0" ripplerFill="WHITE" styleClass="menu-bar-btns">
+                                 <graphic>
+                                    <FontAwesomeIcon iconName="USER" size="2em" styleClass="menu-bar-btns-icon" />
+                                 </graphic>
+                              </JFXButton>
+                              <JFXButton alignment="CENTER" contentDisplay="CENTER" layoutX="442.0" layoutY="11.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="50.0" ripplerFill="WHITE" styleClass="menu-bar-btns">
+                                 <graphic>
+                                    <FontAwesomeIcon iconName="LIST_ALT" size="2em" styleClass="menu-bar-btns-icon" />
+                                 </graphic>
+                              </JFXButton>
+                              <JFXButton alignment="CENTER" contentDisplay="CENTER" layoutX="482.0" layoutY="11.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="50.0" ripplerFill="WHITE" styleClass="menu-bar-btns">
+                                 <graphic>
+                                    <FontAwesomeIcon iconName="TH" size="2em" styleClass="menu-bar-btns-icon" />
+                                 </graphic>
+                              </JFXButton>
+                           </children>
+                        </HBox>
+                        <JFXTextArea fx:id="txtDescription" labelFloat="true" layoutX="88.0" layoutY="103.0" maxWidth="278.0" minWidth="204.0" prefWidth="278.0" promptText="Description" unFocusColor="#4059a9" />
+                        <Label layoutX="74.0" layoutY="316.0" prefHeight="17.0" prefWidth="59.0" style="-fx-text-fill: #000;" text="Note" />
+                        <Rating fx:id="rating_feedbcak" layoutX="139.0" layoutY="309.0" prefHeight="12.0" prefWidth="120.0" />
+                     </children>
+                  </Pane>
+                  <Pane fx:id="pnlBack" prefHeight="500.0" prefWidth="581.0" style="-fx-background-color: #fff;">
+                     <children>
+                        <ImageView fx:id="btnBack" fitHeight="31.0" fitWidth="39.0" layoutX="14.0" layoutY="11.0" onMouseClicked="#handleMouseEvent" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../util/images/back.png" />
+                           </image>
+                        </ImageView>
+                        <Label id=".labeltitre" layoutX="63.0" layoutY="11.0" prefHeight="32.0" prefWidth="330.0" styleClass="labeltitre" stylesheets="@utils/css/stylehseet.css" text="Vos Réclamations">
+                           <font>
+                              <Font name="Ebrima Bold" size="25.0" />
+                           </font>
+                        </Label>
+                        <TableView fx:id="table" layoutX="-4.0" layoutY="94.0" prefHeight="410.0" prefWidth="569.0">
+                          <columns>
+                            <TableColumn fx:id="col_objet" minWidth="0.0" prefWidth="75.0" text="objet" />
+                            <TableColumn fx:id="col_description" prefWidth="75.0" text="Description" />
+                          </columns>
+                           <columnResizePolicy>
+                              <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                           </columnResizePolicy>
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                           <stylesheets>
+                              <URL value="@util/css/tables.css" />
+                              <URL value="@../util/tables.css" />
+                           </stylesheets>
+                        
+                        </TableView>
+                        <JFXTextField fx:id="txt_filter" labelFloat="true" layoutX="45.0" layoutY="58.0" minWidth="194.0" prefHeight="32.0" prefWidth="194.0" promptText="Filter" />
+                     </children>
+                     <StackPane.margin>
+                        <Insets />
+                     </StackPane.margin>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </Pane>
+                  <Pane fx:id="pnlProfile" prefHeight="285.0" prefWidth="572.0" style="-fx-background-color: #fff;">
+                     <children>
+                        <Label fx:id="rec1" layoutX="190.0" layoutY="16.0" prefHeight="49.0" prefWidth="207.0" style="-fx-text-fill: linear-gradient(to bottom left,#6F4CBB,#431FA0);" styleClass="labeltitre" stylesheets="@util/css/stylehseet.css" text="Votre Profile">
+                           <font>
+                              <Font name="Ebrima Bold" size="25.0" />
+                           </font>
+                        </Label>
+                        <ImageView fx:id="btnBackProfile" fitHeight="31.0" fitWidth="39.0" layoutX="29.0" layoutY="25.0" onMouseClicked="#handleMouseEvent" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../util/images/back.png" />
+                           </image>
+                        </ImageView>
+                        <Label id=".labeltitre" fx:id="txt_lb_nbr_rec" contentDisplay="CENTER" layoutX="225.0" layoutY="306.0" style="-fx-text-fill: #000;" text="15 Reclamations">
+                           <font>
+                              <Font name="Ebrima Bold" size="15.0" />
+                           </font>
+                           <stylesheets>
+                              <URL value="@util/css/stylehseet.css" />
+                           </stylesheets>
+                        </Label>
+                        <JFXButton fx:id="txt_btn_email" layoutX="131.0" layoutY="218.0" lineSpacing="55.0" prefHeight="32.0" prefWidth="304.0" style="-fx-text-fill: #000; -fx-background-color: #fff;" text="dsds" />
+                        <JFXButton fx:id="txt_btn_tel" layoutX="131.0" layoutY="260.0" lineSpacing="55.0" prefHeight="32.0" prefWidth="304.0" style="-fx-text-fill: #000; -fx-background-color: #fff;" text="dsds" />
+                        <FontAwesomeIcon fill="#00c71c" iconName="PHONE" layoutX="413.0" layoutY="278.0" lineSpacing="55.0" />
+                        <FontAwesomeIcon fill="#00c71c" iconName="ENVELOPE" layoutX="408.0" layoutY="238.0" lineSpacing="55.0" />
+                        <JFXButton fx:id="txt_btn_nom" layoutX="131.0" layoutY="177.0" lineSpacing="55.0" prefHeight="32.0" prefWidth="304.0" style="-fx-text-fill: #000; -fx-background-color: #fff;" text="Chadi Troudi" />
+                        <FontAwesomeIcon fill="#00c71c" iconName="USER" layoutX="411.0" layoutY="197.0" lineSpacing="55.0" />
+                        <ImageView fx:id="image_profile" fitHeight="51.0" fitWidth="72.0" layoutX="256.0" layoutY="111.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../util/images/ml.jpg" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+                  <Pane fx:id="pnlDernierRec" prefHeight="500.0" prefWidth="513.0" style="-fx-background-color: #fff;" stylesheets="@../util/stylehseet.css">
+                     <children>
+                        <JFXTextArea fx:id="txtDescription" labelFloat="true" layoutX="50.0" layoutY="183.0" maxWidth="278.0" minWidth="204.0" prefWidth="278.0" promptText="Description" unFocusColor="#4059a9" />
+                        <Label fx:id="rec2" layoutX="102.0" layoutY="48.0" style="-fx-text-fill: linear-gradient(to bottom left,#6F4CBB,#431FA0);" styleClass="labeltitre" text="Ajouter Réclamation">
+                           <font>
+                              <Font name="Ebrima Bold" size="25.0" />
+                           </font>
+                           <stylesheets>
+                              <URL value="@../util/stylehseet.css" />
+                           </stylesheets>
+                        </Label>
+                        <JFXButton fx:id="btnEnvoyer" alignment="CENTER" buttonType="RAISED" layoutX="52.0" layoutY="388.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#handleButtonAction" prefHeight="35.0" prefWidth="100.0" ripplerFill="#4059a9" styleClass="envoyer_btn" stylesheets="@utils/css/stylehseet.css" text="Envoyer" textFill="#4059a9">
+                           <font>
+                              <Font name="Impact" size="17.0" />
+                           </font>
+                           <effect>
+                              <Glow />
+                           </effect>
+                        </JFXButton>
+                        <JFXButton fx:id="btnAnnuler" alignment="CENTER" buttonType="RAISED" layoutX="252.0" layoutY="388.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#handleButtonAction" prefHeight="35.0" prefWidth="100.0" ripplerFill="#4059a9" styleClass="envoyer_btn" text="Annuler" textFill="#4059a9">
+                           <font>
+                              <Font name="Impact" size="17.0" />
+                           </font>
+                           <effect>
+                              <Glow />
+                           </effect>
+                           <stylesheets>
+                              <URL value="@utils/css/stylehseet.css" />
+                              <URL value="@utils/css/stylehseet.css" />
+                           </stylesheets>
+                        </JFXButton>
+                        <JFXButton fx:id="btnDReclamation" alignment="CENTER" buttonType="RAISED" layoutX="102.0" layoutY="437.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#handleButtonAction" prefHeight="35.0" prefWidth="218.0" ripplerFill="#00c71c" style="-fx-background-color: null;" styleClass="labeltitre" text="Vos Dérniers Réclamations" textFill="#4059a9">
+                           <font>
+                              <Font name="Impact" size="17.0" />
+                           </font>
+                           <effect>
+                              <Glow />
+                           </effect>
+                           <stylesheets>
+                              <URL value="@utils/css/stylehseet.css" />
+                              <URL value="@utils/css/stylehseet.css" />
+                           </stylesheets>
+                        </JFXButton>
+                        <JFXTextField fx:id="txtObjet" labelFloat="true" layoutX="50.0" layoutY="103.0" maxWidth="293.0" minWidth="293.0" prefHeight="36.0" prefWidth="293.0" promptText="Objet" unFocusColor="#4059a9" />
+                        <Label fx:id="labelObjet1" layoutX="56.0" layoutY="139.0" style="-fx-text-fill: #F44336;" />
+                        <Label fx:id="labelDescription1" layoutX="55.0" layoutY="219.0" style="-fx-text-fill: #F44336;" />
+                        <HBox alignment="CENTER_RIGHT" layoutX="343.0" layoutY="14.0">
+                           <children>
+                              <JFXButton fx:id="userIcon1" alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#handleButtonAction" prefHeight="50.0" prefWidth="50.0" ripplerFill="WHITE" styleClass="menu-bar-btns">
+                                 <graphic>
+                                    <FontAwesomeIcon iconName="USER" size="2em" styleClass="menu-bar-btns-icon" />
+                                 </graphic>
+                              </JFXButton>
+                              <JFXButton fx:id="feedback" alignment="CENTER" contentDisplay="CENTER" layoutX="442.0" layoutY="11.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="50.0" ripplerFill="WHITE" styleClass="menu-bar-btns">
+                                 <graphic>
+                                    <FontAwesomeIcon iconName="LIST_ALT" size="2em" styleClass="menu-bar-btns-icon" />
+                                 </graphic>
+                              </JFXButton>
+                              <JFXButton alignment="CENTER" contentDisplay="CENTER" layoutX="482.0" layoutY="11.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="50.0" ripplerFill="WHITE" styleClass="menu-bar-btns">
+                                 <graphic>
+                                    <FontAwesomeIcon iconName="TH" size="2em" styleClass="menu-bar-btns-icon" />
+                                 </graphic>
+                              </JFXButton>
+                           </children>
+                        </HBox>
+                     </children>
+                  </Pane>
+               </children>
+            </StackPane>
+         </center>
+                <JFXButton alignment="CENTER" buttonType="RAISED" layoutX="42.0" layoutY="330.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="100.0" ripplerFill="#4059a9" styleClass="envoyer_btn" stylesheets="@../util/css/stylehseet.css" text="Envoyer" textFill="#4059a9">
+               <font>
+                  <Font name="Impact" size="17.0" />
+               </font>
+               <effect>
+                  <Glow />
+               </effect>
+            </JFXButton>
+            <JFXButton alignment="CENTER" buttonType="RAISED" layoutX="219.0" layoutY="330.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="100.0" ripplerFill="#4059a9" styleClass="envoyer_btn" stylesheets="@../util/css/stylehseet.css" text="Annuler" textFill="#4059a9">
+               <font>
+                  <Font name="Impact" size="17.0" />
+               </font>
+               <effect>
+                  <Glow />
+               </effect>
+            </JFXButton>
+      </BorderPane>
+   </children>
+   
+</AnchorPane>
