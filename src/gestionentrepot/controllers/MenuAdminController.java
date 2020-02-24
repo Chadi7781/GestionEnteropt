@@ -123,7 +123,6 @@ public class MenuAdminController extends Application  implements Initializable  
    
     @FXML
     private JFXTextField txt_filter;
-    @FXML
     private TableColumn<Vehicule, String> col_type;
     @FXML
     private TableColumn<Vehicule, String> col_etat;
@@ -173,8 +172,6 @@ public class MenuAdminController extends Application  implements Initializable  
     private ImageView btnBackListV;
     private Label label;
     @FXML
-    private ImageView btnBack;
-    @FXML
     private TableColumn<?, ?> col_objet;
     @FXML
     private TableColumn<?, ?> col_description;
@@ -188,7 +185,6 @@ public class MenuAdminController extends Application  implements Initializable  
     private TableView<Reclamation> table_consulter_rec;
     
         ObservableList<Reclamation>obListRec ;
-    @FXML
     private Pane pnlStat;
     @FXML
     private TableColumn<?, ?> col_id_rec;
@@ -200,6 +196,16 @@ public class MenuAdminController extends Application  implements Initializable  
     private Button Bt_Emp;
     @FXML
     private Button Bt_Stock;
+    @FXML
+    private Label rec2;
+    @FXML
+    private JFXButton btn_annuler_vehicule;
+    @FXML
+    private ImageView btnBackDashboard;
+    @FXML
+    private TableColumn<?, ?> col_marque;
+    @FXML
+    private ImageView btnBackVehic;
 
 
 
@@ -317,6 +323,7 @@ public class MenuAdminController extends Application  implements Initializable  
                      afficherVehicules();
                      System.out.println("add");
                 }
+          
 
         
              //fin ajout vehicule
@@ -385,7 +392,7 @@ public class MenuAdminController extends Application  implements Initializable  
 
             obList   = vehiculeService.getVehicule();
             
-             col_type.setCellValueFactory(new PropertyValueFactory<>("marque"));
+             col_marque.setCellValueFactory(new PropertyValueFactory<>("marque"));
                col_etat.setCellValueFactory(new PropertyValueFactory<>("etat"));
 
              
@@ -599,14 +606,37 @@ public class MenuAdminController extends Application  implements Initializable  
     }
 
     @FXML
-    private void handleMouseEvent(MouseEvent event) {
+    private void handleMouseEvent(MouseEvent event) throws IOException {
           if(event.getSource() == btnClose) {
             System.exit(0);
         }
         else if(event.getSource().equals(btnBackListV)) {
             new FadeIn(pnl_liste_v).play();
             pnl_liste_v.toFront();
-        }   
+        } 
+        else if(event.getSource().equals(btnBackDashboard)) {
+            Parent root = FXMLLoader.load(getClass().getResource("Dashboard.fxml"));
+		Scene scene = new Scene(root);
+		Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+		stage.setScene(scene);
+		stage.show();
+
+                        stage.setScene(scene);
+                new animatefx.animation.ZoomIn(root).play();
+
+        }
+        else if(event.getSource().equals(btnBackDashboard)) {
+              Parent root = FXMLLoader.load(getClass().getResource("Dashboard.fxml"));
+		Scene scene = new Scene(root);
+		Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+		stage.setScene(scene);
+		stage.show();
+
+                        stage.setScene(scene);
+                new animatefx.animation.ZoomIn(root).play();
+
+        stage.show();
+        }
      
         
     }
@@ -650,7 +680,6 @@ public class MenuAdminController extends Application  implements Initializable  
 
     }
 
-    @FXML
     void gotoDepot(ActionEvent event) throws IOException {
         
               Parent root = FXMLLoader.load(getClass().getResource("/gestionentrepot/gui/geredepo.fxml"));
@@ -706,6 +735,10 @@ public class MenuAdminController extends Application  implements Initializable  
         
         
        
+    }
+
+    @FXML
+    private void HandleActionButtonViderChampsVehicule(ActionEvent event) {
     }
 
 

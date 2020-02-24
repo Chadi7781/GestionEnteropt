@@ -48,8 +48,6 @@ public class Dashboard {
     @FXML
     private Button Bt_Stock21;
     @FXML
-    private Button btn_vehicule;
-    @FXML
     private Button btn_cons_rec;
 
 
@@ -136,15 +134,6 @@ public class Dashboard {
                                   
        
  
-    }
-    @FXML
-    private void gotoVehicule(ActionEvent event) {
-              
-    }
-
-    @FXML
-    private void HandleActionButtonAffiche(ActionEvent event) throws IOException {
-     
     }
 
     
