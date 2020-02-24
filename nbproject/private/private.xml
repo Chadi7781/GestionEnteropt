@@ -6,14 +6,16 @@
             <file>file:/C:/Users/Chédy/Documents/NetBeansProjects/PiDev/src/gestionentrepot/controllers/ReclamationServiceController.java</file>
             <file>file:/C:/Users/Chédy/Documents/NetBeansProjects/PiDev/src/gestionentrepot/gui/menu_admin.fxml</file>
             <file>file:/C:/Users/Chédy/Documents/NetBeansProjects/PiDev/src/gestionentrepot/utils/BDConnector.java</file>
-            <file>file:/C:/Users/Chédy/Documents/NetBeansProjects/PiDev/src/gestionentrepot/controllers/Dashboard.java</file>
             <file>file:/C:/Users/Chédy/Documents/NetBeansProjects/PiDev/src/gestionentrepot/service/GestionProduitService.java</file>
             <file>file:/C:/Users/Chédy/Documents/NetBeansProjects/PiDev/src/gestionentrepot/service/VehiculeService.java</file>
             <file>file:/C:/Users/Chédy/Documents/NetBeansProjects/PiDev/src/gestionentrepot/service/IReclamationService.java</file>
             <file>file:/C:/Users/Chédy/Documents/NetBeansProjects/PiDev/src/gestionentrepot/service/GestionEmployerService.java</file>
             <file>file:/C:/Users/Chédy/Documents/NetBeansProjects/PiDev/src/gestionentrepot/service/IVehiculeService.java</file>
-            <file>file:/C:/Users/Chédy/Documents/NetBeansProjects/PiDev/src/gestionentrepot/controllers/MenuAdminController.java</file>
             <file>file:/C:/Users/Chédy/Documents/NetBeansProjects/PiDev/src/gestionentrepot/service/ReclamationService.java</file>
+            <file>file:/C:/Users/Chédy/Documents/NetBeansProjects/PiDev/src/gestionentrepot/utils/Utility.java</file>
+            <file>file:/C:/Users/Chédy/Documents/NetBeansProjects/PiDev/src/gestionentrepot/GestionEntrepot.java</file>
+            <file>file:/C:/Users/Chédy/Documents/NetBeansProjects/PiDev/src/gestionentrepot/controllers/Dashboard.java</file>
+            <file>file:/C:/Users/Chédy/Documents/NetBeansProjects/PiDev/src/gestionentrepot/controllers/MenuAdminController.java</file>
             <file>file:/C:/Users/Chédy/Documents/NetBeansProjects/PiDev/src/gestionentrepot/service/ServiceDepot.java</file>
         </group>
     </open-files>
