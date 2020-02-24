@@ -6,7 +6,7 @@
 package gestionentrepot.service;
 
 import gestionentrepot.enteties.Vehicule;
-import gestionentrepot.utils.DBConnect;
+import gestionentrepot.utils.BDConnector;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -36,7 +36,7 @@ public class VehiculeService  implements IVehiculeService{
     String mat;
 
     public VehiculeService() {
-        con= DBConnect.getInstance().getConnection();
+        con= BDConnector.driverBD();
     }
     
     

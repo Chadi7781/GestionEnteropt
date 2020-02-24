@@ -8,7 +8,7 @@ package gestionentrepot.service;
 import gestionentrepot.controllers.ReclamationServiceController;
 import gestionentrepot.enteties.Reclamation;
 import gestionentrepot.enteties.Utilisateur;
-import gestionentrepot.utils.DBConnect;
+import gestionentrepot.utils.BDConnector;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -54,7 +54,7 @@ public class ReclamationService  implements IReclamationService{
     private LineChart<String,Date>lineChart;
 
     public ReclamationService() {
-        con= DBConnect.getInstance().getConnection();
+        con= BDConnector.driverBD();
     }
     
     
