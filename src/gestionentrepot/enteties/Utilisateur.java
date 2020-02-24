@@ -5,7 +5,6 @@
  */
 package gestionentrepot.enteties;
 
-import pidev.entity.*;
 
 /**
  *

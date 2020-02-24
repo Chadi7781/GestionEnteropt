@@ -51,7 +51,6 @@ ObservableList<Depot>observableList;
     /**
      * Initializes the controller class.
      */
-    @FXML
     void initialize() {
         assert table != null : "fx:id=\"table\" was not injected: check your FXML file 'geredepo.fxml'.";
         assert adr != null : "fx:id=\"adr\" was not injected: check your FXML file 'geredepo.fxml'.";

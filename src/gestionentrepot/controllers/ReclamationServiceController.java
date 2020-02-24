@@ -5,7 +5,6 @@
  */
 package gestionentrepot.controllers;
 
-import pidev.views.*;
 import animatefx.animation.FadeIn;
 import animatefx.animation.ZoomIn;
 import com.gluonhq.charm.glisten.control.CardPane;
@@ -14,6 +13,8 @@ import com.jfoenix.controls.JFXDatePicker;
 import com.jfoenix.controls.JFXTextArea;
 import com.jfoenix.controls.JFXTextField;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
+import gestionentrepot.enteties.Reclamation;
+import gestionentrepot.service.ReclamationService;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -90,10 +91,7 @@ import javafx.util.Callback;
 import javax.swing.JOptionPane;
 import javax.xml.crypto.Data;
 import org.controlsfx.control.Rating;
-import pidev.entity.Reclamation;
-import pidev.entity.Vehicule;
-import pidev.services.IReclamationService;
-import pidev.services.ReclamationService;
+
 
 /**
  *

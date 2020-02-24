@@ -7,6 +7,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 
 public class GestionEntrepot extends Application {
@@ -16,6 +17,8 @@ public class GestionEntrepot extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("/gestionentrepot/gui/Dashboard.fxml"));
         Scene scene = new Scene(root);
         stage.setScene(scene);
+                stage.initStyle(StageStyle.TRANSPARENT);
+
         stage.show();
     }
 

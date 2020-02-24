@@ -5,7 +5,10 @@
  */
 package gestionentrepot.service;
 
-import pidev.services.*;
+import gestionentrepot.controllers.ReclamationServiceController;
+import gestionentrepot.enteties.Reclamation;
+import gestionentrepot.enteties.Utilisateur;
+import gestionentrepot.utils.DBConnect;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -14,6 +17,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -32,10 +36,7 @@ import javafx.scene.image.Image;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.stage.FileChooser;
-import pidev.util.DBConnect;
-import pidev.views.ReclamationServiceController;
-import pidev.entity.Reclamation;
-import pidev.entity.Utilisateur;
+
 
 /**
  *
@@ -158,6 +159,23 @@ public class ReclamationService  implements IReclamationService{
         }
         return countIdRec;
     }
+    
+      @Override
+    public int getNbrFeedback() {
+        String sql="SELECT COUNT(*) FROM feedback";
+        ResultSet rs;
+        int countIdFed=0;
+        try {
+            PreparedStatement st= con.prepareStatement(sql);
+			ResultSet res= st.executeQuery(); 
+                        while(res.next()) {
+                           countIdFed= res.getInt(1);
+                        }
+        }catch(Exception e) {
+            e.printStackTrace();
+        }
+        return countIdFed;
+    }
 
     @Override
     public void traiterReclamation(Reclamation p ) {
@@ -210,9 +228,13 @@ public class ReclamationService  implements IReclamationService{
          while(rset.next()){
            XYChart.Data<String, Number> datax =  new XYChart.Data<String, Number>(rset.getString(i),nbr);
              System.out.println("nbr="+nbr);
-             
-           series2.getData().add(datax);
-           series1.getData().add(datax);
+            double totale = getNbrFeedback()+getNbrReclamation();
+         series1.getData().add(new XYChart.Data("Reclamations",getNbrReclamation()));
+         series1.getData().add(new XYChart.Data("% des techniciens", (getNbrReclamation()/totale)*100));
+         series1.getData().add(new XYChart.Data("% des techniciens", (getNbrFeedback()/totale)*100));
+
+         DecimalFormat df = new DecimalFormat("0.00");
+        
           
           
          } i++;j++;
@@ -220,7 +242,7 @@ public class ReclamationService  implements IReclamationService{
         }catch(Exception e){
         
         }
-     bchart.getData().addAll(series1,series2);
+     bchart.getData().addAll(series1);
      pane.getChildren().add(bchart);
     
    return bchart;

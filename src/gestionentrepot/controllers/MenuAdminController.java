@@ -5,15 +5,24 @@
  */
 package gestionentrepot.controllers;
 
-import pidev.views.*;
 import animatefx.animation.FadeIn;
 import animatefx.animation.ZoomIn;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXRadioButton;
 import com.jfoenix.controls.JFXTextField;
 import com.jfoenix.controls.JFXToggleButton;
+import gestionentrepot.controllers.ControlEmploye;
+import gestionentrepot.enteties.Reclamation;
+import gestionentrepot.enteties.Vehicule;
+import gestionentrepot.service.ReclamationService;
+import gestionentrepot.service.ServiceDepot;
+import gestionentrepot.service.VehiculeService;
+import gestionentrepot.utils.ZoomManager;
+import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
 import java.sql.SQLIntegrityConstraintViolationException;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -25,18 +34,22 @@ import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Pos;
 import javafx.geometry.Side;
 import javafx.scene.Group;
 import javafx.scene.Node;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.chart.LineChart;
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.PieChart;
+import javafx.scene.chart.StackedBarChart;
 import javafx.scene.chart.XYChart;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
@@ -60,11 +73,7 @@ import javafx.util.Callback;
 import javafx.util.Duration;
 import javax.swing.JOptionPane;
 import org.controlsfx.control.Notifications;
-import pidev.entity.Reclamation;
-import pidev.entity.Vehicule;
-import pidev.services.ReclamationService;
-import pidev.services.VehiculeService;
-import pidev.util.ZoomManager;
+
 
 /**
  * FXML Controller class
@@ -120,6 +129,24 @@ public class MenuAdminController extends Application  implements Initializable  
     private TableColumn<Vehicule, String> col_etat;
     
       List list_vehicule_current = new ArrayList<>();
+      
+    private StackedBarChart<?, ?> StackBar;
+
+    private PieChart PieChart;
+
+    private Button Bt_Dashboard2;
+
+    private Button Bt_Emp2;
+
+    private Button Bt_Stock2;
+
+    private com.gluonhq.charm.glisten.control.TextField Moyenne_Age_Input;
+    ControlEmploye econtroleemploye = new ControlEmploye();
+    ServiceDepot servicedep = new ServiceDepot();
+    @FXML
+    private Button btn_cons_rec;
+
+
 
     
     //
@@ -158,8 +185,6 @@ public class MenuAdminController extends Application  implements Initializable  
     @FXML
     private Hyperlink lien_consulter_stat;
     @FXML
-    private JFXButton btn_cons_rec;
-    @FXML
     private TableView<Reclamation> table_consulter_rec;
     
         ObservableList<Reclamation>obListRec ;
@@ -169,6 +194,12 @@ public class MenuAdminController extends Application  implements Initializable  
     private TableColumn<?, ?> col_id_rec;
     @FXML
     private TableColumn<?, ?> col_user_email;
+    @FXML
+    private Button Bt_Dashboard;
+    @FXML
+    private Button Bt_Emp;
+    @FXML
+    private Button Bt_Stock;
 
 
 
@@ -258,7 +289,7 @@ public class MenuAdminController extends Application  implements Initializable  
 	
 	new ZoomManager(stackPane, lineChart, series);
         
-        
+        afficherVehicules();
             
  
 
@@ -283,6 +314,7 @@ public class MenuAdminController extends Application  implements Initializable  
                      vehicule = new Vehicule(matricule,marque,etat);
                      vehiculeService=new VehiculeService();
                      vehiculeService.ajouterVehicule(vehicule);
+                     afficherVehicules();
                      System.out.println("add");
                 }
 
@@ -323,7 +355,7 @@ public class MenuAdminController extends Application  implements Initializable  
 
     }
     
-    public void afficherReclamation() {
+    public  void afficherReclamation() {
         obListRec = reclamationService.getAllReclamation();
 
             table.refresh();
@@ -352,8 +384,11 @@ public class MenuAdminController extends Application  implements Initializable  
             obList.clear();
 
             obList   = vehiculeService.getVehicule();
+            
              col_type.setCellValueFactory(new PropertyValueFactory<>("marque"));
                col_etat.setCellValueFactory(new PropertyValueFactory<>("etat"));
+
+             
             table.setItems(obList);
               System.out.println("here we = "+obList);
     }
@@ -592,7 +627,7 @@ public class MenuAdminController extends Application  implements Initializable  
       } else if (option.get() == ButtonType.OK) {
           vehiculeService.supprimerVehicule(vehicule);
           obList.clear();
-          vehiculeService.getVehicule();
+          afficherVehicules();
       } else if (option.get() == ButtonType.CANCEL) {
          this.label.setText("Exit!");
       } else {
@@ -605,7 +640,78 @@ public class MenuAdminController extends Application  implements Initializable  
       
 
 
+    @FXML
+          void gotoEmploye(ActionEvent event) throws IOException {
+              Parent root = FXMLLoader.load(getClass().getResource("/gestionentrepot/gui/GererEmp.fxml"));
+              Scene scene = new Scene(root);
+              Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+              stage.setScene(scene);
+              stage.show();
+
+    }
+
+    @FXML
+    void gotoDepot(ActionEvent event) throws IOException {
+        
+              Parent root = FXMLLoader.load(getClass().getResource("/gestionentrepot/gui/geredepo.fxml"));
+              Scene scene = new Scene(root);
+              Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+              stage.setScene(scene);
+              stage.show();
+ 
+    }
     
+        @FXML
+    void gotoStock(ActionEvent event) throws IOException {
+        
+              Parent root = FXMLLoader.load(getClass().getResource("/gestionentrepot/gui/Stock.fxml"));
+              Scene scene = new Scene(root);
+              Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+              stage.setScene(scene);
+              stage.show();
+ 
+    }
+
+
+
+    
+    
+    void initialize() throws SQLException {
+        assert Bt_Dashboard2 != null : "fx:id=\"Bt_Dashboard2\" was not injected: check your FXML file 'Dashboard.fxml'.";
+        assert Bt_Stock2 != null : "fx:id=\"Bt_Stock2\" was not injected: check your FXML file 'Dashboard.fxml'.";
+        assert Bt_Emp2 != null : "fx:id=\"Bt_Emp2\" was not injected: check your FXML file 'Dashboard.fxml'.";
+        assert StackBar != null : "fx:id=\"StackBar\" was not injected: check your FXML file 'Dashboard.fxml'.";
+        assert PieChart != null : "fx:id=\"PieChart\" was not injected: check your FXML file 'Dashboard.fxml'.";
+        
+        ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList(
+                new PieChart.Data("Depot non disponible", (servicedep.findAllDepotsNondispo().size())), new PieChart.Data("Depot disponible", (servicedep.findAllDepotsdispo().size())) );
+        final PieChart chart = new PieChart(pieChartData);
+        chart.setTitle("Depot");
+        PieChart.setData(pieChartData);
+         XYChart.Series dataSeries1 = new XYChart.Series();
+         dataSeries1.setName("Nombre des employés");
+
+         double totale = econtroleemploye.getNbrOuvrier() +econtroleemploye.getNbrIngenieur()+econtroleemploye.getNbrLivreur()+econtroleemploye.getNbrTechnicien();
+         dataSeries1.getData().add(new XYChart.Data("Ouvrier", econtroleemploye.getNbrOuvrier()));
+         dataSeries1.getData().add(new XYChart.Data("% des ouvrier",(econtroleemploye.getNbrOuvrier()/totale)*100));
+         dataSeries1.getData().add(new XYChart.Data("Ingenieur", econtroleemploye.getNbrIngenieur()));
+         dataSeries1.getData().add(new XYChart.Data("% des ingenieur", (econtroleemploye.getNbrIngenieur()/totale)*100));
+         dataSeries1.getData().add(new XYChart.Data("Livreur", econtroleemploye.getNbrLivreur()));
+         dataSeries1.getData().add(new XYChart.Data("% des livreurs", (econtroleemploye.getNbrLivreur()/totale)*100));
+         dataSeries1.getData().add(new XYChart.Data("Technicien", econtroleemploye.getNbrTechnicien()));
+         dataSeries1.getData().add(new XYChart.Data("% des techniciens", (econtroleemploye.getNbrTechnicien()/totale)*100));
+         StackBar.getData().add(dataSeries1);
+         DecimalFormat df = new DecimalFormat("0.00");
+        Moyenne_Age_Input.setText(String.valueOf(df.format(econtroleemploye.getMoyenneAge()/totale)));
+        
+        
+       
+    }
+
+
+ 
+
+
     
 
 }

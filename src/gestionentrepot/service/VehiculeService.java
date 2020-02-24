@@ -5,7 +5,8 @@
  */
 package gestionentrepot.service;
 
-import pidev.services.*;
+import gestionentrepot.enteties.Vehicule;
+import gestionentrepot.utils.DBConnect;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -20,10 +21,6 @@ import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.control.ComboBox;
-import pidev.entity.Reclamation;
-import pidev.entity.Vehicule;
-import pidev.util.DBConnect;
-import pidev.views.ReclamationServiceController;
 
 /**
  *

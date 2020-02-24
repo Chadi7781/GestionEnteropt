@@ -6,6 +6,7 @@
 <?import java.lang.String?>
 <?import java.net.URL?>
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
@@ -23,11 +24,11 @@
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="561.0" prefWidth="770.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pidev.views.MenuAdminController">
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="561.0" prefWidth="770.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gestionentrepot.controllers.MenuAdminController">
    <children>
       <BorderPane fx:id="border_pane_admin" prefHeight="562.0" prefWidth="765.0" style="-fx-background-color: #fff;">
          <left>
-            <Pane prefHeight="559.0" prefWidth="225.0" styleClass="left" BorderPane.alignment="CENTER">
+            <Pane prefHeight="562.0" prefWidth="202.0" styleClass="left" BorderPane.alignment="CENTER">
                <children>
                   <HBox layoutX="23.0" layoutY="14.0" spacing="5.0">
                      <children>
@@ -38,7 +39,7 @@
                   </HBox>
                   <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="61.0" layoutY="101.0" pickOnBounds="true" smooth="false">
                      <image>
-                        <Image url="@../util/images/s4s.png" />
+                        <Image url="@../images/s4s.png" />
                      </image>
                      <styleClass>
                         <String fx:value="envoyer_btn" />
@@ -51,34 +52,42 @@
                         <Font name="Impact" size="20.0" />
                      </font>
                   </Label>
-                  <JFXButton fx:id="btn_cons_rec" alignment="CENTER" buttonType="RAISED" layoutX="-1.0" layoutY="270.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#HandleActionButtonAffiche" prefHeight="35.0" prefWidth="225.0" ripplerFill="BLACK" style="-fx-background-color: #fff;" styleClass="sidebar-btn" text="Consulter Reclamation" textFill="#4059a9">
+                  <Button fx:id="Bt_Dashboard" layoutX="4.0" layoutY="243.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="197.0" style="-fx-background-color: #191970;" text="Dashboard" textFill="WHITE">
                      <font>
-                        <Font name="Impact" size="17.0" />
+                        <Font name="Arial" size="18.0" />
                      </font>
-                     <effect>
-                        <Glow />
-                     </effect>
-                     <stylesheets>
-                        <URL value="@utils/css/stylehseet.css" />
-                        <URL value="@utils/css/stylehseet.css" />
-                     </stylesheets>
-                  </JFXButton>
-                  <JFXButton fx:id="btn_vehicule" alignment="CENTER" buttonType="RAISED" layoutY="316.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#HandleActionVehicule" prefHeight="35.0" prefWidth="225.0" ripplerFill="BLACK" style="-fx-background-color: #fff;" styleClass="sidebar-btn" text="Gestion Vehicules" textFill="#4059a9">
+                  </Button>
+                  <Button fx:id="Bt_Emp" layoutX="4.0" layoutY="281.0" mnemonicParsing="false" onAction="#gotoEmploye" prefHeight="38.0" prefWidth="196.0" style="-fx-background-color: #191970;" text="Employé" textFill="WHITE">
                      <font>
-                        <Font name="Impact" size="17.0" />
+                        <Font name="Arial" size="18.0" />
                      </font>
-                     <effect>
-                        <Glow />
-                     </effect>
-                     <stylesheets>
-                        <URL value="@utils/css/stylehseet.css" />
-                        <URL value="@utils/css/stylehseet.css" />
-                     </stylesheets>
+                  </Button>
+                  <Button fx:id="Bt_Stock" layoutX="4.0" layoutY="319.0" mnemonicParsing="false" onAction="#gotoStock" prefHeight="38.0" prefWidth="203.0" style="-fx-background-color: #191970;" text="Stock" textFill="WHITE">
+                     <font>
+                        <Font name="Arial" size="18.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="Bt_Stock" layoutX="4.0" layoutY="357.0" mnemonicParsing="false" onAction="#gotoDepot" prefHeight="38.0" prefWidth="201.0" style="-fx-background-color: #191970;" text="Depot" textFill="WHITE">
+                     <font>
+                        <Font name="Arial" size="18.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btn_cons_rec" layoutX="4.0" layoutY="433.0" mnemonicParsing="false" onAction="#HandleActionButtonAffiche" prefHeight="38.0" prefWidth="205.0" style="-fx-background-color: #191970;" text="Réclamation" textFill="WHITE">
+                     <font>
+                        <Font name="Arial" size="18.0" />
+                     </font>
+                  </Button>
+                  <JFXButton fx:id="btn_vehicule" layoutX="4.0" layoutY="395.0" mnemonicParsing="false" onAction="#HandleActionVehicule" prefHeight="38.0" prefWidth="198.0" style="-fx-background-color: #191970;" styleClass="sidebar-btn" text="Vehicules" textFill="WHITE">
+                     <font>
+                        <Font name="Arial" size="18.0" />
+                     </font>
                   </JFXButton>
                </children>
                <stylesheets>
                   <URL value="@util/stylehseet.css" />
                   <URL value="@../util/stylehseet.css" />
+                  <URL value="@stylehseet.css" />
+                  <URL value="@table.css" />
                </stylesheets></Pane>
          </left>
                 <JFXButton alignment="CENTER" buttonType="RAISED" layoutX="42.0" layoutY="330.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="100.0" ripplerFill="#4059a9" styleClass="envoyer_btn" stylesheets="@../util/css/stylehseet.css" text="Envoyer" textFill="#4059a9">
@@ -100,37 +109,53 @@
          <center>
             <StackPane fx:id="stackPane" prefHeight="500.0" prefWidth="500.0" BorderPane.alignment="CENTER">
                <children>
+                  <Pane fx:id="pnlStat" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #fff;">
+                     <children>
+                        <Button layoutX="138.0" layoutY="183.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="182.0" text="CLique Reclamation " />
+                     </children></Pane>
                   <Pane fx:id="pnlModif" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #fff;">
                      <children>
                         <TextField fx:id="tx_mod_objet" layoutX="21.0" layoutY="67.0" prefHeight="26.0" prefWidth="391.0" promptText="Saisir le matircule" />
                         <TextArea fx:id="txt_mod_desc" layoutX="20.0" layoutY="121.0" prefHeight="164.0" prefWidth="394.0" promptText="Saisir la marque" />
                         <Label layoutX="28.0" layoutY="103.0" prefHeight="18.0" prefWidth="70.0" style="-fx-text-fill: #000;" text="Marque" />
-                        <JFXButton fx:id="btnModifierValider" alignment="CENTER" buttonType="RAISED" layoutX="98.0" layoutY="384.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#handleButtonValidateAction" ripplerFill="#4059a9" styleClass="envoyer_btn" stylesheets="@utils/css/stylehseet.css" text="Valider" textFill="#4059a9">
+                        <JFXButton fx:id="btnModifierValider" alignment="CENTER" buttonType="RAISED" layoutX="98.0" layoutY="384.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#handleButtonValidateAction" ripplerFill="#4059a9" styleClass="envoyer_btn" text="Valider" textFill="#4059a9">
                            <font>
                               <Font name="Impact" size="17.0" />
                            </font>
                            <effect>
                               <Glow />
                            </effect>
+                           <stylesheets>
+                              <URL value="@utils/css/stylehseet.css" />
+                              <URL value="@stylehseet.css" />
+                           </stylesheets>
                         </JFXButton>
                         <Label layoutX="28.0" layoutY="49.0" prefHeight="18.0" prefWidth="70.0" style="-fx-text-fill: #000;" text="Matricule" />
                         <Circle fill="#c70000" layoutX="201.0" layoutY="344.0" radius="8.0" stroke="BLACK" strokeType="INSIDE" />
                         <Label layoutX="39.0" layoutY="309.0" prefHeight="18.0" prefWidth="70.0" style="-fx-text-fill: #000;" text="Etat" />
                         <Label layoutX="109.0" layoutY="342.0" prefHeight="18.0" prefWidth="70.0" style="-fx-text-fill: #000;" text="En cours ..." />
-                        <JFXButton fx:id="btnModifierAnnuler" alignment="CENTER" buttonType="RAISED" layoutX="257.0" layoutY="384.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" ripplerFill="#4059a9" styleClass="envoyer_btn" stylesheets="@utils/css/stylehseet.css" text="Annuler" textFill="#4059a9">
+                        <JFXButton fx:id="btnModifierAnnuler" alignment="CENTER" buttonType="RAISED" layoutX="257.0" layoutY="384.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" ripplerFill="#4059a9" styleClass="envoyer_btn" text="Annuler" textFill="#4059a9">
                            <font>
                               <Font name="Impact" size="17.0" />
                            </font>
                            <effect>
                               <Glow />
                            </effect>
+                           <stylesheets>
+                              <URL value="@utils/css/stylehseet.css" />
+                              <URL value="@stylehseet.css" />
+                           </stylesheets>
                         </JFXButton>
                         <ImageView fx:id="btnBackListV" fitHeight="31.0" fitWidth="39.0" layoutX="13.0" layoutY="14.0" onMouseClicked="#handleMouseEvent" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../util/images/back.png" />
+                              <Image url="@../images/back.png" />
                            </image>
                         </ImageView>
                      </children>
+                     <stylesheets>
+                        <URL value="@styles.css" />
+                        <URL value="@stylehseet.css" />
+                     </stylesheets>
                   </Pane>
                   <Pane fx:id="pnl_liste_v" prefHeight="500.0" prefWidth="581.0" style="-fx-background-color: #fff;">
                      <children>
@@ -142,6 +167,7 @@
                            <stylesheets>
                               <URL value="@utils/css/stylehseet.css" />
                               <URL value="@../util/stylehseet.css" />
+                              <URL value="@stylehseet.css" />
                            </stylesheets>
                         </Label>
                         <TableView fx:id="table" layoutX="-4.0" layoutY="94.0" prefHeight="410.0" prefWidth="569.0">
@@ -158,6 +184,8 @@
                            <stylesheets>
                               <URL value="@utils/css/tables.css" />
                               <URL value="@../util/tables.css" />
+                              <URL value="@stylehseet.css" />
+                              <URL value="@table.css" />
                            </stylesheets>
                         </TableView>
                      </children>
@@ -199,12 +227,11 @@
                         </JFXButton>
                      </children>
                   </Pane>
-                  <Pane fx:id="pnlStat" prefHeight="200.0" prefWidth="200.0" />
                   <Pane fx:id="pnl_liste_reclamations" prefHeight="500.0" prefWidth="581.0" style="-fx-background-color: #fff;">
                      <children>
                         <ImageView fx:id="btnBack" fitHeight="31.0" fitWidth="39.0" layoutX="14.0" layoutY="11.0" onMouseClicked="#handleMouseEvent" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../util/images/back.png" />
+                              <Image url="@../images/back.png" />
                            </image>
                         </ImageView>
                         <Label id=".labeltitre" layoutX="63.0" layoutY="11.0" prefHeight="32.0" prefWidth="330.0" styleClass="labeltitre" stylesheets="@utils/css/stylehseet.css" text="Liste des Réclamations">
@@ -212,7 +239,7 @@
                               <Font name="Ebrima Bold" size="25.0" />
                            </font>
                         </Label>
-                        <TableView fx:id="table_consulter_rec" layoutX="-4.0" layoutY="94.0" prefHeight="410.0" prefWidth="569.0">
+                        <TableView fx:id="table_consulter_rec" layoutX="3.0" layoutY="94.0" prefHeight="405.0" prefWidth="546.0">
                            <columns>
                               <TableColumn fx:id="col_objet" minWidth="0.0" prefWidth="75.0" text="objet" />
                               <TableColumn fx:id="col_description" prefWidth="75.0" text="Description" />
@@ -228,6 +255,7 @@
                            <stylesheets>
                               <URL value="@utils/css/tables.css" />
                               <URL value="@../util/tables.css" />
+                              <URL value="@table.css" />
                            </stylesheets>
                         </TableView>
                         <JFXTextField fx:id="txt_filter1" labelFloat="true" layoutX="45.0" layoutY="58.0" minWidth="194.0" prefHeight="32.0" prefWidth="194.0" promptText="Filter" />
@@ -236,6 +264,24 @@
                      <padding>
                         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                      </padding>
+                  </Pane>
+                  <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #ffff;">
+                     <children>
+                        <ImageView fitHeight="445.0" fitWidth="566.0" layoutX="-3.0" layoutY="-4.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/logi.jpg" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="27.0" layoutY="313.0" prefHeight="53.0" prefWidth="538.0" style="-fx-text-fill: #000;" text="Clique les buttons Vehicule ou button Reclamation sur le sidebar a droite pour continuer">
+                           <font>
+                              <Font name="Impact" size="14.0" />
+                           </font>
+                           <stylesheets>
+                              <URL value="@../../../PiDev/src/pidev/utils/css/stylehseet.css" />
+                              <URL value="@stylehseet.css" />
+                           </stylesheets>
+                        </Label>
+                     </children>
                   </Pane>
                </children>
             </StackPane>

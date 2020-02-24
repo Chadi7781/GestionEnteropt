@@ -63,6 +63,16 @@
                   <Font name="Arial" size="18.0" />
                </font>
             </Button>
+            <Button fx:id="btn_cons_rec" layoutX="2.0" layoutY="362.0" mnemonicParsing="false" onAction="#gotoReclamation" prefHeight="38.0" prefWidth="172.0" style="-fx-background-color: #191970;" text="Réclamation" textFill="WHITE">
+               <font>
+                  <Font name="Arial" size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="btn_vehicule" layoutX="2.0" layoutY="400.0" mnemonicParsing="false" onAction="#gotoVehicule" prefHeight="38.0" prefWidth="172.0" style="-fx-background-color: #191970;" styleClass="sidebar-btn" text="Vehicules" textFill="WHITE">
+               <font>
+                  <Font name="Arial" size="18.0" />
+               </font>
+            </Button>
          </children>
       </Pane>
       <Text layoutX="212.0" layoutY="338.0" strokeType="OUTSIDE" strokeWidth="0.0" text="La moyenne d'age des employés : " wrappingWidth="185.98046875" />

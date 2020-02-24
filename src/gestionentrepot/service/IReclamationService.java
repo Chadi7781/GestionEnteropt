@@ -5,14 +5,13 @@
  */
 package gestionentrepot.service;
 
-import pidev.services.*;
+import gestionentrepot.enteties.Reclamation;
 import java.sql.ResultSet;
 import java.util.List;
 import javafx.collections.ObservableList;
 import javafx.scene.chart.BarChart;
 import javafx.scene.chart.LineChart;
-import pidev.entity.Reclamation;
-import pidev.entity.Utilisateur;
+
 
 /**
  *
@@ -28,7 +27,7 @@ public interface IReclamationService {
     public int getNbrReclamation();
     
    
- 
+    public int getNbrFeedback();
     
     public BarChart loadChart();
     

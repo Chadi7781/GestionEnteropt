@@ -5,7 +5,6 @@
  */
 package gestionentrepot.enteties;
 
-import pidev.entity.*;
 import com.jfoenix.controls.JFXButton;
 import java.sql.Blob;
 import java.time.LocalDate;

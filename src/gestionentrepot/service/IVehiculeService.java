@@ -5,11 +5,9 @@
  */
 package gestionentrepot.service;
 
-import pidev.services.*;
+import gestionentrepot.enteties.Vehicule;
 import java.util.List;
 import javafx.collections.ObservableList;
-import pidev.entity.Reclamation;
-import pidev.entity.Vehicule;
 
 /**
  *

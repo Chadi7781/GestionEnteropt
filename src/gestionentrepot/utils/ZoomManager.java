@@ -19,7 +19,6 @@ under the License.
 
 package gestionentrepot.utils;
 
-import pidev.util.*;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Iterator;

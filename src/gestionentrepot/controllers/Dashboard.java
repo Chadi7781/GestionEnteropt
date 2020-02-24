@@ -1,10 +1,14 @@
 package gestionentrepot.controllers;
 
+import animatefx.animation.ZoomIn;
 import com.gluonhq.charm.glisten.control.TextField;
+import com.jfoenix.controls.JFXButton;
 import gestionentrepot.service.ServiceDepot;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.text.DecimalFormat;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -41,6 +45,12 @@ public class Dashboard {
     private TextField Moyenne_Age_Input;
     ControlEmploye econtroleemploye = new ControlEmploye();
     ServiceDepot servicedep = new ServiceDepot();
+    @FXML
+    private Button Bt_Stock21;
+    @FXML
+    private Button btn_vehicule;
+    @FXML
+    private Button btn_cons_rec;
 
 
     @FXML
@@ -82,7 +92,6 @@ public class Dashboard {
 
     
     
-    @FXML 
     void initialize() throws SQLException {
         assert Bt_Dashboard2 != null : "fx:id=\"Bt_Dashboard2\" was not injected: check your FXML file 'Dashboard.fxml'.";
         assert Bt_Stock2 != null : "fx:id=\"Bt_Stock2\" was not injected: check your FXML file 'Dashboard.fxml'.";
@@ -112,6 +121,30 @@ public class Dashboard {
         Moyenne_Age_Input.setText(String.valueOf(df.format(econtroleemploye.getMoyenneAge()/totale)));
         
 
+    }
+
+    @FXML
+    private void gotoReclamation(ActionEvent event) throws IOException {
+                     
+             
+                       
+              Parent root = FXMLLoader.load(getClass().getResource("/gestionentrepot/gui/menu_admin.fxml"));
+              Scene scene = new Scene(root);
+              Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+              stage.setScene(scene);
+              stage.show();              
+                                  
+       
+ 
+    }
+    @FXML
+    private void gotoVehicule(ActionEvent event) {
+              
+    }
+
+    @FXML
+    private void HandleActionButtonAffiche(ActionEvent event) throws IOException {
+     
     }
 
     

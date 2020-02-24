@@ -3,9 +3,22 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Chédy/Documents/NetBeansProjects/PiDev/src/gestionentrepot/controllers/AjouterEmp.java</file>
             <file>file:/C:/Users/Chédy/Documents/NetBeansProjects/PiDev/src/gestionentrepot/controllers/AjouterdepotController.java</file>
             <file>file:/C:/Users/Chédy/Documents/NetBeansProjects/PiDev/src/pidev/PiDev.java</file>
+            <file>file:/C:/Users/Chédy/Documents/NetBeansProjects/PiDev/src/gestionentrepot/enteties/Vehicule.java</file>
+            <file>file:/C:/Users/Chédy/Documents/NetBeansProjects/PiDev/src/gestionentrepot/controllers/GeredepoController.java</file>
+            <file>file:/C:/Users/Chédy/Documents/NetBeansProjects/PiDev/src/gestionentrepot/PiDevAdmin.java</file>
+            <file>file:/C:/Users/Chédy/Documents/NetBeansProjects/PiDev/src/pidev/views/MenuAdminController.java</file>
+            <file>file:/C:/Users/Chédy/Documents/NetBeansProjects/PiDev/src/gestionentrepot/controllers/Stock.java</file>
+            <file>file:/C:/Users/Chédy/Documents/NetBeansProjects/PiDev/src/gestionentrepot/controllers/AjouterEmp.java</file>
+            <file>file:/C:/Users/Chédy/Documents/NetBeansProjects/PiDev/src/gestionentrepot/GestionEntrepot.java</file>
+            <file>file:/C:/Users/Chédy/Documents/NetBeansProjects/PiDev/src/gestionentrepot/controllers/ModificationdepController.java</file>
+            <file>file:/C:/Users/Chédy/Documents/NetBeansProjects/PiDev/src/gestionentrepot/controllers/Dashboard.java</file>
+            <file>file:/C:/Users/Chédy/Documents/NetBeansProjects/PiDev/src/pidev/views/ReclamationServiceController.java</file>
+            <file>file:/C:/Users/Chédy/Documents/NetBeansProjects/PiDev/src/pidev/services/ReclamationService.java</file>
+            <file>file:/C:/Users/Chédy/Documents/NetBeansProjects/PiDev/src/gestionentrepot/controllers/MenuAdminController.java</file>
+            <file>file:/C:/Users/Chédy/Documents/NetBeansProjects/PiDev/src/pidev/PiDevAdmin.java</file>
+            <file>file:/C:/Users/Chédy/Documents/NetBeansProjects/PiDev/src/pidev/services/VehiculeService.java</file>
         </group>
     </open-files>
 </project-private>
